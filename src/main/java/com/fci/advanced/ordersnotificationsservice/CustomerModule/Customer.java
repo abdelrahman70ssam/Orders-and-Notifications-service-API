@@ -2,17 +2,24 @@ package com.fci.advanced.ordersnotificationsservice.CustomerModule;
 
 
 public class Customer {
-    private String name ,username , password , email , phoneNumber;
+    private String name;
+    private String username;
+    private String password;
+    private String email;
+    private String phoneNumber;
+    private final String location;
     private double balance ;
     private boolean accountStatus ;
 
-    public Customer(String name, String username, String password, String email, String phoneNumber, double balance) {
+    public Customer(String name, String username, String password, String email, String phoneNumber, String location, double balance, boolean accountStatus) {
         this.name = name;
         this.username = username;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.location = location;
         this.balance = balance;
+        this.accountStatus = true;
     }
 
     public double getBalance() {
@@ -62,5 +69,19 @@ public class Customer {
 
     public void setAccountStatus(boolean accountStatus) {
         this.accountStatus = accountStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", location='" + location + '\'' +
+                ", balance=" + balance +
+                ", accountStatus=" + accountStatus +
+                '}';
     }
 }
