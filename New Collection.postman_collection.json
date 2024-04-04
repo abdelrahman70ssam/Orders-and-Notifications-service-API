@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "476ec565-3cdd-4b0f-9b97-8d2d952c4595",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31594125"
+	},
+	"item": [
+		{
+			"name": "sendOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/sendOTP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"sendOTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyOTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"abdelrahman\",\r\n  \"username\": \"abdelrahman787\",\r\n  \"password\": \"kudoshinichi888\",\r\n  \"email\": \"johndoe@gmail.com\",\r\n  \"phoneNubmer\": \"01063995376\",\r\n  \"balance\": 1000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/verifyOTP/827402",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"verifyOTP",
+						"827402"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"abdelrahman\",\r\n    \"username\": \"abdelrahman787\",\r\n    \"password\": \"abdelrahmanhossam888\",\r\n    \"email\": \"johndoe@gmail.com\",\r\n    \"phoneNubmer\": \"01063995376\",\r\n    \"location\" : \"El dokki\",\r\n    \"balance\": 1000.0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/login/abdelrahman787/abdelrahmanhossam888",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"login",
+						"abdelrahman787",
+						"abdelrahmanhossam888"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all by category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/products/allByCategory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"products",
+						"allByCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "simple order request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": {\r\n    \"name\": \"abdelrahman\",\r\n    \"username\": \"abdelrahman787\",\r\n    \"password\": \"abdelrahmanhossam888\",\r\n    \"email\": \"johndoe@gmail.com\",\r\n    \"phoneNubmer\": \"01063995376\",\r\n    \"location\" : \"El dokki\",\r\n    \"balance\": 1000.0\r\n    },\r\n    \"products\":[\r\n        {\r\n            \"serialNO\": \"SN002\",\r\n            \"name\": \"Smartphone\",\r\n            \"vendor\": \"Samsung\",\r\n            \"category\": \"Electronics\",\r\n            \"price\": 500.0\r\n        }\r\n    ]\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/simple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"customer\": {\r\n        \"name\": \"abdelrahman\",\r\n        \"username\": \"abdelrahman787\",\r\n        \"password\": \"kudoshinichi888\",\r\n        \"email\": \"johndoe@gmail.com\",\r\n        \"phoneNubmer\": \"01063995376\",\r\n        \"location\" : \"El dokki\",\r\n        \"balance\": 1000.0\r\n        },\r\n        \"products\":[\r\n            {\r\n                \"serialNO\": \"SN002\",\r\n                \"name\": \"Smartphone\",\r\n                \"vendor\": \"Samsung\",\r\n                \"category\": \"Electronics\",\r\n                \"price\": 500.0\r\n            }\r\n        ]\r\n    \r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/orders/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all notifications in queue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/notify/display",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"notify",
+						"display"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compound order Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"simpleOrder1\": {\r\n    \"customer\": {\r\n    \"name\": \"abdelrahman\",\r\n    \"username\": \"abdelrahman787\",\r\n    \"password\": \"abdelrahmanhossam888\",\r\n    \"email\": \"johndoe@gmail.com\",\r\n    \"phoneNubmer\": \"01063995376\",\r\n    \"location\" : \"El dokki\",\r\n    \"balance\": 1000.0\r\n    },\r\n    \"products\": [\r\n      {\r\n        \"serialNO\": \"SN002\",\r\n        \"name\": \"Smartphone\",\r\n        \"vendor\": \"Samsung\",\r\n        \"category\": \"Electronics\",\r\n        \"price\": 500.0\r\n      },\r\n      {\r\n        \"serialNO\": \"SN004\",\r\n        \"name\": \"Coffee Maker\",\r\n        \"vendor\": \"Breville\",\r\n        \"category\": \"Appliances\",\r\n        \"price\": 150.0\r\n      }\r\n      // Add more products as needed\r\n    ]\r\n  },\r\n  \"simpleOrder2\": {\r\n    \"customer\": {\r\n      \"name\": \"Jane Doe\",\r\n      \"username\": \"janedoe69\",\r\n      \"password\": \"kakakakkaka456\",\r\n      \"email\": \"janedoe@gmail.com\",\r\n      \"phoneNumber\": \"01063995376\",\r\n      \"location\": \"El dokki\",\r\n      \"balance\": 1200.0,\r\n      \"accountStatus\": true\r\n    },\r\n    \"products\": [\r\n      {\r\n        \"serialNO\": \"SN008\",\r\n        \"name\": \"Backpack\",\r\n        \"vendor\": \"North Face\",\r\n        \"category\": \"Footwear\",\r\n        \"price\": 80.0\r\n      },\r\n      {\r\n        \"serialNO\": \"SN010\",\r\n        \"name\": \"Digital Camera\",\r\n        \"vendor\": \"Canon\",\r\n        \"category\": \"Kitchen\",\r\n        \"price\": 600.0\r\n      }\r\n      // Add more products as needed\r\n    ]\r\n  }\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/compound",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"compound"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showOrderDetailsCompound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/orders/id1/id2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"id1",
+						"id2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showOrderDetails  simple",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/orders/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ship Order Simple",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/orders/ShipOrder/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"ShipOrder",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ship Order compound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/orders/ShipOrder/id1/id2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"ShipOrder",
+						"id1",
+						"id2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "initialize notification templates",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/notify/init",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"notify",
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get most used channel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/notify/mostChannel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"notify",
+						"mostChannel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get most used  template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/notify/mostTemplate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"notify",
+						"mostTemplate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/orders/ShipOrder/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"ShipOrder",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
